@@ -14,14 +14,14 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/admin/schedule")
+@RequestMapping("/schedule")
 @Validated
-public class AdminTimeSlotController {
+public class PublicTimeSlotController {
 
-    private final static Logger log = LoggerFactory.getLogger(AdminTimeSlotController.class);
+    private final static Logger log = LoggerFactory.getLogger(PublicTimeSlotController.class);
     private final TimeSlotRestService service;
 
-    public AdminTimeSlotController(TimeSlotRestService service) {
+    public PublicTimeSlotController(TimeSlotRestService service) {
         this.service = service;
     }
 
