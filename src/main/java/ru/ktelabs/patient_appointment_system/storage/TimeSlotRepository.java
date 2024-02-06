@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface TimeSlotRepository extends JpaRepository<TimeSlot, Long> {
+
     List<TimeSlot> findAllByPatientId(Long id);
 
-    List<TimeSlot> findByDoctorIdAndReceptionDate(Long idDoctor, LocalDate date);
+    List<TimeSlot> findByDoctorIdAndReceptionDateAndPatientIdIsNull(Long idDoctor, LocalDate date);
 }

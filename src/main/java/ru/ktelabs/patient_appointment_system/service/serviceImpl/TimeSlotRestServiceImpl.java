@@ -48,7 +48,7 @@ public class TimeSlotRestServiceImpl implements TimeSlotRestService {
 
     @Override
     public List<TimeSlotDtoEnd> getFreeTimeSlots(Long idDoctor, LocalDate date) {
-        return repository.findByDoctorIdAndReceptionDate(idDoctor, date).stream()
+        return repository.findByDoctorIdAndReceptionDateAndPatientIdIsNull(idDoctor, date).stream()
                 .map(TimeSlotMapper::toTimeSlotDtoEnd)
                 .collect(Collectors.toList());
     }
